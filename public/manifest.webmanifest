@@ -1,0 +1,9 @@
+{
+  "name":"Together Photographer",
+  "short_name":"Together",
+  "start_url":"/",
+  "display":"standalone",
+  "background_color":"#fffaf3",
+  "theme_color":"#17324d",
+  "icons":[]
+}

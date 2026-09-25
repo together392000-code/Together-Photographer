@@ -1,0 +1,63 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>كتالوج Together Photographer</title><style>body{margin:0;font-family:Tahoma,Arial;background:#fff8e9;color:#102653}.wrap{max-width:1250px;margin:auto;padding:24px}.box{background:white;border-radius:22px;padding:22px;box-shadow:0 5px 22px #1232;margin:20px 0}input{width:100%;padding:13px;margin:7px 0;border:1px solid #ccd4e0;border-radius:11px;box-sizing:border-box}button{border:0;border-radius:11px;padding:12px 18px;background:#0969c8;color:#fff;font-weight:bold;cursor:pointer}.secondary{background:#657184}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}.card{background:white;border-radius:18px;padding:12px;box-shadow:0 4px 18px #1232}.card img{width:100%;aspect-ratio:4/3;object-fit:contain;border-radius:12px;background:#f7f7f7}.hidden{display:none}.top{display:flex;justify-content:space-between;align-items:center;gap:12px}.tabs{display:flex;gap:8px;margin-bottom:14px}.tabs button.off{background:#e8edf5;color:#102653}.note{font-size:14px;color:#58647a}</style></head><body><main class="wrap"><div class="top"><h1>كتالوج Together Photographer</h1><a href="/">الصفحة الرئيسية</a></div><div id="gate" class="box">
+<h2>الدخول للمحتوى الداخلي</h2>
+<div style="background:#eaf7ee;color:#176b38;padding:10px 12px;border-radius:10px;margin-bottom:12px;font-weight:bold">Gmail فقط — بدون كلمة سر</div>
+<p>اكتب Gmail الخاص بك فقط للدخول إلى الكتالوج والتصميمات.</p>
+<input id="email" type="email" inputmode="email" autocomplete="email" placeholder="example@gmail.com">
+<button id="go" onclick="submitGate()">دخول</button>
+<p class="note">لا نطلب كلمة سر ولا إنشاء حساب جديد.</p>
+</div><div id="catalog" class="hidden"><div class="box top"><div>مرحبًا <b id="who"></b></div><button class="secondary" onclick="logout()">تسجيل خروج</button></div><div id="items" class="grid"></div></div></main><script>
+const VISITOR_ID=localStorage.tp_vid||(localStorage.tp_vid=(crypto.randomUUID?crypto.randomUUID():'v-'+Date.now()+'-'+Math.random().toString(36).slice(2)));
+async function submitGate(){
+  const e=(email.value||'').trim().toLowerCase();
+  if(!/^[^\s@]+@gmail\.com$/.test(e)) return alert('اكتب Gmail صحيح مثل example@gmail.com');
+  go.disabled=true; go.textContent='جاري الدخول...';
+  let r=await fetch('/api/customer-login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:e,visitorId:VISITOR_ID})});
+  go.disabled=false; go.textContent='دخول';
+  if(!r.ok){let j={};try{j=await r.json()}catch{};return alert(j.error||'تعذر الدخول');}
+  load();
+}
+async function load(){
+  let r=await fetch('/api/catalog');
+  if(!r.ok)return;
+  let d=await r.json();
+  gate.classList.add('hidden');catalog.classList.remove('hidden');
+  who.textContent=d.customer.name||d.customer.email;
+  items.innerHTML=d.items.map(x=>`<article class="card">${x.image?`<img src="${x.image}">`:''}<h3>${x.ar||x.en||''}</h3></article>`).join('')||'<div class="box">لا توجد تصميمات متاحة.</div>';
+}
+async function logout(){await fetch('/api/customer-logout');location.reload()}
+load();
+</script>
+<div id="google_translate_element" style="display:none"></div>
+<script>
+function googleTranslateElementInit(){
+  new google.translate.TranslateElement({pageLanguage:'ar',autoDisplay:false},'google_translate_element');
+}
+
+
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<script>
+(function(){
+  function applyLanguage(lang){
+    if(!lang)return;
+    var tries=0, timer=setInterval(function(){
+      var combo=document.querySelector('.goog-te-combo');
+      if(combo){
+        clearInterval(timer); combo.value=lang;
+        combo.dispatchEvent(new Event('change'));
+        localStorage.setItem('tp_lang',lang);
+      } else if(++tries>30) clearInterval(timer);
+    },150);
+  }
+  document.addEventListener('change',function(e){
+    if(e.target.matches('select[data-tp-language="1"], #lang')) applyLanguage(e.target.value);
+  });
+  window.addEventListener('load',function(){
+    var sel=document.querySelector('select[data-tp-language="1"], #lang');
+    var saved=localStorage.getItem('tp_lang');
+    if(sel && saved){sel.value=saved; applyLanguage(saved);}
+  });
+})();
+</script>
+</body></html>

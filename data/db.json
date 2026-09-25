@@ -1,0 +1,139 @@
+{
+  "settings": {
+    "company": "Together Photographer",
+    "phone": "01200396903",
+    "whatsapp": "",
+    "facebook": "",
+    "instagram": "",
+    "tiktok": "",
+    "youtube": "",
+    "defaultLanguage": "auto",
+    "logo": "/uploads/logo-1790375889154-dd4126c8.jpg",
+    "hero": "/assets/hero-concept.png",
+    "taglineAr": "تصوير مدرسي احترافي، تصميمات مميزة، وذكريات تدوم.",
+    "taglineEn": "Creative school photography, premium designs, and memories made to last."
+  },
+  "categories": [
+    {
+      "id": "maquettes",
+      "en": "Complete Maquettes",
+      "ar": "ماكيتات كاملة"
+    },
+    {
+      "id": "pvc",
+      "en": "PVC Standee",
+      "ar": "مجسمات PVC"
+    },
+    {
+      "id": "folder",
+      "en": "Folder",
+      "ar": "فولدر"
+    },
+    {
+      "id": "acrylic",
+      "en": "Acrylic Frame",
+      "ar": "برواز أكريليك"
+    },
+    {
+      "id": "catalog",
+      "en": "Catalog",
+      "ar": "كتالوج"
+    }
+  ],
+  "items": [],
+  "schools": [],
+  "admin": {
+    "email": "together392000@gmail.com",
+    "passwordHash": "71f084a72fc1ec8b892036dc694df7c3abd8073639901e91dbb413cb0fd337ca"
+  },
+  "analytics": {
+    "visits": [
+      {
+        "visitorId": "bb95863f-646d-462f-9305-b7e0fa8e3a08",
+        "firstSeen": "2026-09-25T22:23:56.529Z",
+        "lastSeen": "2026-09-25T23:07:03.934Z",
+        "visits": 7,
+        "pages": [
+          "/",
+          "/#home"
+        ],
+        "referrer": "",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36"
+      }
+    ],
+    "events": [
+      {
+        "at": "2026-09-25T23:07:05.559Z",
+        "visitorId": "bb95863f-646d-462f-9305-b7e0fa8e3a08",
+        "type": "click",
+        "label": "/admin.html",
+        "page": "/"
+      },
+      {
+        "at": "2026-09-25T23:06:58.471Z",
+        "visitorId": "bb95863f-646d-462f-9305-b7e0fa8e3a08",
+        "type": "customer_login",
+        "label": "together392000@gmail.com",
+        "page": "/catalog.html"
+      },
+      {
+        "at": "2026-09-25T23:06:55.111Z",
+        "visitorId": "bb95863f-646d-462f-9305-b7e0fa8e3a08",
+        "type": "click",
+        "label": "/catalog.html",
+        "page": "/"
+      },
+      {
+        "at": "2026-09-25T22:36:34.593Z",
+        "visitorId": "bb95863f-646d-462f-9305-b7e0fa8e3a08",
+        "type": "click",
+        "label": "/admin.html",
+        "page": "/"
+      },
+      {
+        "at": "2026-09-25T22:36:30.092Z",
+        "visitorId": "bb95863f-646d-462f-9305-b7e0fa8e3a08",
+        "type": "customer_login",
+        "label": "together392000@gmail.com",
+        "page": "/catalog.html"
+      },
+      {
+        "at": "2026-09-25T22:36:26.577Z",
+        "visitorId": "bb95863f-646d-462f-9305-b7e0fa8e3a08",
+        "type": "click",
+        "label": "/catalog.html",
+        "page": "/"
+      },
+      {
+        "at": "2026-09-25T22:24:12.202Z",
+        "visitorId": "bb95863f-646d-462f-9305-b7e0fa8e3a08",
+        "type": "click",
+        "label": "/catalog.html",
+        "page": "/#home"
+      },
+      {
+        "at": "2026-09-25T22:24:07.467Z",
+        "visitorId": "bb95863f-646d-462f-9305-b7e0fa8e3a08",
+        "type": "click",
+        "label": "#home",
+        "page": "/"
+      }
+    ],
+    "leads": []
+  },
+  "customers": [
+    {
+      "id": "6abc1d14-bb5f-4e4d-bea5-09fb0da1f627",
+      "name": "",
+      "email": "together392000@gmail.com",
+      "active": true,
+      "allowed": [
+        "all"
+      ],
+      "createdAt": "2026-09-25T22:36:30.092Z",
+      "selfRegistered": true,
+      "loginCount": 2,
+      "lastLogin": "2026-09-25T23:06:58.471Z"
+    }
+  ]
+}
