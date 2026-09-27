@@ -104,7 +104,7 @@ body{overflow-x:hidden!important}
 .hero{display:block!important;position:relative!important;width:100%!important;height:auto!important;min-height:0!important;margin:0!important;padding:0!important;background:none!important;overflow:visible!important}
 .heroImg{display:block!important;width:100%!important;height:auto!important;max-width:none!important;object-fit:contain!important;filter:none!important;opacity:1!important;pointer-events:none!important;user-select:none!important}
 .heroHotspots{position:absolute!important;inset:0!important;z-index:5!important;pointer-events:none!important}
-.heroHotspots .hs{position:absolute!important;display:block!important;pointer-events:auto!important;background:transparent!important;border:0!important}
+.heroHotspots .hs{position:absolute!important;display:block!important;pointer-events:auto!important;background:transparent!important;border:0!important;outline:none!important;-webkit-tap-highlight-color:transparent!important;tap-highlight-color:transparent!important;touch-action:manipulation!important}
 /* clickable areas inside the artwork, positioned by percentage so they scale with the full-width image */
 .hs-home{left:8.5%;top:3.2%;width:8.5%;height:7%}.hs-products{left:18%;top:3.2%;width:10%;height:7%}.hs-catalog{left:29%;top:3.2%;width:7%;height:7%}.hs-schools{left:37%;top:3.2%;width:7%;height:7%}.hs-about{left:45%;top:3.2%;width:8%;height:7%}.hs-contact{left:54%;top:3.2%;width:8%;height:7%}.hs-login{right:4%;top:3.2%;width:9%;height:7%}
 .hs-card1{left:6.5%;top:61%;width:17%;height:29%}.hs-card2{left:25%;top:61%;width:17%;height:29%}.hs-card3{left:43.5%;top:61%;width:17%;height:29%}.hs-card4{left:62%;top:61%;width:17%;height:29%}.hs-card5{left:80.5%;top:61%;width:16%;height:29%}
@@ -114,7 +114,7 @@ body{overflow-x:hidden!important}
 .card{cursor:pointer!important}
 #previewModal{position:fixed;inset:0;background:#000b;z-index:100;display:none;align-items:center;justify-content:center;padding:24px}
 #previewModal.open{display:flex}#previewModal .modalBox{background:#fff;border-radius:24px;max-width:min(900px,94vw);max-height:92vh;padding:16px;position:relative;box-shadow:0 20px 70px #0008}#previewModal img{display:block;max-width:100%;max-height:76vh;object-fit:contain;margin:auto;border-radius:16px}#previewModal h3{text-align:center;margin:12px 44px 4px}#previewModal button{position:absolute;right:12px;top:12px;font-size:22px;padding:7px 12px;z-index:2}
-@media(max-width:900px){.hero{height:auto!important}.heroImg{width:100%!important;height:auto!important}.heroHotspots{display:block!important}}
+@media(max-width:900px){.hero{height:auto!important}.heroImg{width:100%!important;height:auto!important}.heroHotspots{display:block!important}.heroHotspots .hs{outline:none!important;-webkit-tap-highlight-color:transparent!important}.hs-card1{left:0%!important;width:24%!important}.hs-card2{left:24.5%!important;width:33%!important}.hs-card3{left:58.5%!important;width:37%!important}}
 </style>
 
 
